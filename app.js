@@ -17,11 +17,12 @@ app.use(body.json());
 
 
 
-function renderBulletin(res, title) {
-	Bulletin.getAll().then(function(body) {
+function renderBulletin(res, body) {
+	Bulletin.getAll().then(function(title) {
 		res.render("main", {
 			title: title,
 			body: body,
+
 		});
 	});
 }
@@ -30,19 +31,31 @@ app.get("/", function(req, res) {
 	renderBulletin(res);
 });
 
-app.post("/", function(req, res) {
-	Bulletin.add(req.body.title).then(function() {
-		renderBulletin(res, "Saved " + req.body.title);
+app.get("/form", function(req, res) {
+	res.render("form", {
+		title: req.body.title,
+		body: req.body.body,
 	});
 });
 
-app.get("/search", function(req, res) {
-	Bulletin.search(req.query.search).then(function(result) {
-		res.render("main", {
-			title: result.rows,
-			// body: body,
-		});
+app.post("/add", function(req, res) {
+	if (req.body.title === ""){
+		res.redirect("/error");
+		return;
+	}
+	else if (req.body.body === "") {
+		res.redirect("/error");
+		return;
+	}
+
+	Bulletin.add([req.body.title, req.body.body]).then(function() {
+		renderBulletin(res, "Saved" + req.body.title);
 	});
+});
+
+
+app.get("/error", function(req, res) {
+	res.render("error");
 });
 
 

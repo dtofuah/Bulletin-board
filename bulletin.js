@@ -8,7 +8,7 @@ const Bulletin = {
 	},
 
 	add: function(title) {
-		return query("INSERT INTO messages (title) VALUES ($1)", [title]);
+		return query("INSERT INTO messages (title, body) VALUES ($1,$2)", title);
 	},
 
 	search: function(search) {
