@@ -1,0 +1,17 @@
+{
+  "name": "bulletin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Donald",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "pg": "^6.2.2"
+  }
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bulletin Board Page</title>
+</head>
+<body>
+	ADD TO DATABASE
+	<form method = "POST" action = "/submit">
+		<input type = "text" name = "add" placeholder="Add to Database">
+		<button type ="submit">ADD</button>
+	</form>
+
+	<table>
+  			<% for (let i = 0; i < title.length; i++) { %>
+          <tr>
+						<td><%= title[i].add %></td>
+					</tr>
+				<% } %>
+  		</table>
+</body>
+</html>
