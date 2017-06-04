@@ -1,0 +1,39 @@
+body {
+	margin:0;
+	padding:0;
+  color: white;
+  font-family: Ariel;
+  width:100%;
+  height: 1000px;
+
+}
+
+.textbox {
+margin-left: 20px;
+height: 30px;
+width: 180px;
+}
+
+
+h1 {
+	color:#7a2e40;
+	margin:0 0 10px;
+	padding-top: 10px;
+	font:normal 17px Georgia, serif;
+	text-align: center;
+}
+
+
+h3 {
+	color:#7a2e40;
+	margin:0 0 10px;
+	padding-top: 10px;
+	font:normal 17px Georgia, serif;
+}
+
+.container {
+  width: 100%;
+  height: 1000px;
+  background: orange;
+
+}

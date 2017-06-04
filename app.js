@@ -39,12 +39,12 @@ app.get("/form", function(req, res) {
 });
 
 app.post("/add", function(req, res) {
-	if (req.body.title === ""){
-		res.redirect("/error");
+	if (req.body.title === "") {
+		res.redirect("/error?message==Please%20Enter%20the%20Description%20of%20Forecast");
 		return;
 	}
 	else if (req.body.body === "") {
-		res.redirect("/error");
+		res.redirect("/error?message==Please%20Enter%20the%20Description%20of%20Forecast");
 		return;
 	}
 
